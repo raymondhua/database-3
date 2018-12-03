@@ -1,0 +1,142 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SMMC.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - SMMC</title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+ 
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" runat="server" href="~/">SMMC</a>
+            </div>
+            <div class="mynav_navbar">
+                <a runat="server" href="~/">Home</a>
+                <div class="mynav_dropdown">
+                    <button class="mynav_dropbtn">
+                        People 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="mynav_dropdown-content">
+                        <a runat="server" href="~/People/Insert">Insert</a>
+                        <a runat="server" href="~/People/InsertCertifications">Insert certification</a>
+                        <a runat="server" href="~/People/UpdateCertifications">Update certification</a>
+                        <a runat="server" href="~/People/Delete">Remove</a>
+                    </div>
+                </div>
+                 <div class="mynav_dropdown">
+                    <button class="mynav_dropbtn">
+                        Students 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="mynav_dropdown-content">
+                        <a runat="server" href="~/Students/ViewAll">View all</a>
+                        <a runat="server" href="~/Students/View">View a student</a>
+                        <a runat="server" href="~/Students/Insert">Enrol</a>
+                        <a runat="server" href="~/Students/Update">Update</a>
+                        <a runat="server" href="~/Students/Unenrol">Ununrol</a>
+                        <a runat="server" href="~/Students/PayBill">Make payment</a>
+                        <a runat="server" href="~/Students/InsertInstrument">Insert student into instrument</a>
+                        <a runat="server" href="~/Students/UpdateInstrument">Update instrument</a>
+                        <a runat="server" href="~/Students/DeleteInstrument">Remove instrument from student</a>
+                    </div>
+                </div>
+                <div class="mynav_dropdown">
+                    <button class="mynav_dropbtn">
+                        Instruments 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="mynav_dropdown-content">
+                        <a runat="server" href="~/Instruments/View">View</a>
+                        <a runat="server" href="~/Instruments/Insert">Insert</a>
+                        <a runat="server" href="~/Instruments/Update">Update</a>
+                        <a runat="server" href="~/Instruments/Delete">Delete</a>
+                    </div>
+                </div>
+                <div class="mynav_dropdown">
+                    <button class="mynav_dropbtn">
+                        Tutors 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="mynav_dropdown-content">
+                        <a runat="server" href="~/Tutors/Insert">Add</a>
+                        <a runat="server" href="~/Tutors/View">View</a>
+                        <a runat="server" href="~/Tutors/Pay">Suggested pay</a>
+                        <a runat="server" href="~/Tutors/Update">Update</a>
+                    </div>
+                </div>
+               <div class="mynav_dropdown">
+                    <button class="mynav_dropbtn">
+                        Lessons 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="mynav_dropdown-content">
+                        <a runat="server" href="~/Lessons/Insert">Add lesson</a>
+                        <a runat="server" href="~/Lessons/InsertStudents">Add student into lesson</a>
+                        <a runat="server" href="~/Lessons/View">View lesson</a>
+                        <a runat="server" href="~/Lessons/ViewAllStudents">View all students</a>
+                        <a runat="server" href="~/Lessons/ViewAllTutors">View all tutors</a>
+                    </div>
+                </div>
+                <div class="mynav_dropdown">
+                    <button class="mynav_dropbtn">
+                        Sheet music 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="mynav_dropdown-content">
+                        <a runat="server" href="~/SheetMusic/Insert">Add</a>
+                        <a runat="server" href="~/SheetMusic/InsertTutors">Insert tutors</a>
+                        <a runat="server" href="~/SheetMusic/Update">Update</a>
+                        <a runat="server" href="~/SheetMusic/UpdateTutors">Update tutors</a>
+                        <a runat="server" href="~/SheetMusic/View">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - SMMC</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
